@@ -40,18 +40,10 @@
 def apply_all_func(int_list, *functions):
     results = dict()
     for func in functions:
-        res1 = list(map(func, int_list))
-        print(f"{func.__name__}: {list(res1)}")
-        #results[func.__name__] = list(res1)
+        results[func.__name__] = func(int_list)
 
     return results
 
 
-ls = [6, 20, 15, 9]
-res1 = map(min, [6, 20, 15, 9])
-print(f"{res1}")
-print(f"{list(res1)}")
-
-
-#print(apply_all_func([6, 20, 15, 9], max, min))
-#print(apply_all_func([6, 20, 15, 9],  len, sum, sorted))
+print(apply_all_func([6, 20, 15, 9], max, min))
+print(apply_all_func([6, 20, 15, 9],  len, sum, sorted))
